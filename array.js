@@ -39,24 +39,23 @@
 // }
 // console.log(result(array,target))
 
+//the all elements 6 move to end part of the array
 
-// let array = [6,1,6,8,10,4,15,6,3,9,6];
-// let n = 6;
-// for(let i = 0; i < array.length; i++ ){
-//     for(let j = array.length-1; j > 0; j--) {
-//         if(array[j] === n) {
-//            array[j-1] = array[j] 
-//            j--
-//         }
-//         if( i == n) {
-//             temp = array[i]
-//             array[j] = array[i]
-//             array[j] = temp
-//         }
-//     }
-// }
-// console.log(array)
-// return  array
+let array = [6,1,6,8,10,4,15,6,3,9,6];
+let target = 6
+let i = 0;
+let j = array.length-1;
+console.log(j)
+while(i < j) { 
+    while( i < j && array[j] == target) {
+        j--;    
+}
+if(array[i] == target) {
+    let temp = array[j]
+    array[j] = array[i]
+    array[i] = temp
+}
+i++;
+}
 
-
-
+console.log(array)
