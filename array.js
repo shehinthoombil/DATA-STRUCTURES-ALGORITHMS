@@ -1,61 +1,65 @@
 // Solve with arrays
-// time complexity 
+// time complexity
 
-// let arr = [6,5,4,3,9,8,0];
+// let arr = [6, 5, 4, 3, 9, 8, 0];
 // let t = 10;
 
-// function result(arr,t) {
-   
-//     for( let i = 0; i < arr.length-1; i++ ) {
-//        for( let j = i + 1; j < arr.length; j++) {
-//             if(arr[i] + arr[j] == t){
+// function result(arr, t) {
+
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[i] + arr[j] == t) {
 //                 return true
 //             }
-//        } 
+//         }
 //     }
-//    return false
-// } 
-// console.log(result(arr,t))
+//     return false
+// }
+// console.log(result(arr, t))
+
 
 // space complexity
 
-//  let array = [6,5,4,3,9,8,0];
-//  let target = 10;
+// let array = [6, 5, 4, 3, 9, 8, 0];
+// let target = 10;
 
-// function result(array,target) {
+// function result(array, target) {
 //     let nums = new Set();
 
-//     for(let i = 0; i < array.length; i++) {
+//     for (let i = 0; i < array.length; i++) {
 //         let num = array[i];
 //         let match = target - num;
-//         if(nums.has(match)){
+//         if (nums.has(match)) {
 //             return [num, match];
-//         }else {
+//         } else {
 //             nums.add(num)
 //         }
 //     }
-// return null
+//     return null
 
 // }
-// console.log(result(array,target))
+// console.log(result(array, target))
 
-//the all elements 6 move to end part of the array
 
-let array = [6,1,6,8,10,4,15,6,3,9,6];
-let target = 6
-let i = 0;
-let j = array.length-1;
-console.log(j)
-while(i < j) { 
-    while( i < j && array[j] == target) {
-        j--;    
-}
-if(array[i] == target) {
-    let temp = array[j]
-    array[j] = array[i]
-    array[i] = temp
-}
-i++;
-}
 
-console.log(array)
+// the all elements 6 move to end part of the array
+
+// let array = [6, 1, 6, 8, 10, 4, 15, 6, 3, 9, 6];
+// let target = 6
+// let i = 0;
+// let j = array.length - 1;
+// console.log(j)
+// while (i < j) {
+//     while (i < j && array[j] == target) {
+//         j--;
+//     }
+//     if (array[i] == target) {
+//         let temp = array[j]
+//         array[j] = array[i]
+//         array[i] = temp
+//     }
+//     i++;
+// }
+// console.log(array)
+
+
