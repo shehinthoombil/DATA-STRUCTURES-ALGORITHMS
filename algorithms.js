@@ -10,8 +10,8 @@
 //     return fib
 // }
 // console.log(fibanocci(2))
-// console.log(fibanocci(3))
-// Big - O = O(n)
+// console.log(fibanocci(4))
+// // Big - O = O(n)
 
 // Factorial of a number
 
@@ -121,7 +121,7 @@
 // console.log(linearSearch([-5,2,10,4,16],10))
 // console.log(linearSearch([-5,2,10,4,16],16))
 // console.log(linearSearch([-5,2,10,4,16],2))
-// O(n)
+// // O(n)
 
 //Binary search 
 
