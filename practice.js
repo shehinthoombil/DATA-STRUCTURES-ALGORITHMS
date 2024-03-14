@@ -1,6 +1,6 @@
 // const str = 'Hello my world'
 
-// // short  length string
+// short  length string
 // function shortestWord(str) {
 //     let a = str.split(' ')
 //     console.log(a)
@@ -18,7 +18,7 @@
 // let a = str.split(' ').reverse().join()
 // console.log(a)
 
-
+ 
 // reverse using recursion
 
 // const str = 'Hello my world'
@@ -97,3 +97,6 @@
 //     return console.log(false)
 // }
 
+
+
+// count of the double element

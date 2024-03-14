@@ -1,125 +1,201 @@
-// Singly Linked list
+//Linked list creation
 
-// class Node {
-//     constructor(data) {
-//         this.data = data;
-//         this.next = null;
-//     }
-// }
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
 
-// class SlinkedList {
-//     constructor() {
-//         this.head = null;
-//         this.tail = null;
-//     }
+class linkedList {
+    constructor() {
+        this.head = null;
+        this.size = 0
+    }
 
-//     addNode(data) {
-//         let newNode = new Node(data);
+    isEmpty() {
+        return this.size === 0
+    }
 
-//         if (this.head === null) {
-//             this.head = newNode;
-//         } else {
-//             this.tail.next = newNode;
-//         }
-//         this.tail = newNode;
-//         console.log("New node added")
-//     }
+    getSize() {
+        return this.size
+    }
 
-//     display() {
-//         if (this.head === null) {
-//             console.log("empty");
-//             return;
-//         }
+    // adding values to start, head will move with next node that means head will be the last added node -
+    // that why the last added value is the first and tail will stay menas tail will be the first added node: head -> value 3 -> value 2 -> value 1 
+    //O(1) - time complexity
+    prepend(value) {
+        const node = new Node(value)
+        if (this.isEmpty()) {
+            this.head = node
+        } else {
+            node.next = this.head
+            this.head = node
+        }
+        this.size++
+    }
 
-//         let temp = this.head;
-//         while (temp !== null) {
-//             console.log(temp.data);
-//             temp = temp.next;
-//         }
-//     }
-// }
-// // Example usage
-// let list = new SlinkedList();
-// list.display();
+    // adding valueas to end head will stay and tail will move to the end : head -> value 1 -> value 2 -> value 3
+    //O(n) - time complexity
+    append(value) {
+        const node = new Node(value)
+        if (this.isEmpty()) {
+            this.head = node
+        } else {
+            let prev = this.head
+            while (prev.next) {
+                prev = prev.next
+            }
+            prev.next = node
+        }
+        this.size++
+    }
 
-// list.addNode(10);
-// list.addNode(20);
-// list.addNode(30);
-// list.addNode(50);
+    // inserting value at a selecte index
+    insert(value, index) {
+        if (index < 0 || index > this.size) {
+            return
+        }
+        if (index == 0) {
+            this.prepend(value)
+        } else {
+            const node = new Node(value)
+            let prev = this.head
+            for (let i = 0; i < index - 1; i++) {
+                prev = prev.next
+            }
+            node.next = prev.next
+            prev.next = node
+            this.size++
+        }
+    }
 
-// list.display();
+    // remove a value
+    removeFrom(index) {
+        if (index < 0 || index > this.size) {
+            return
+
+        }
+        let removeNode
+        if (index == 0) {
+            removeNode = this.head
+            this.head = this.head.next
+        } else {
+            let prev = this.head
+            for (let i = 0; i < index - 1; i++) {
+                prev = prev.next
+            }
+            removeNode = prev.next
+            prev.next = removeNode.next
+
+        }
+        this.size++
+        return removeNode.value
+    }
+
+    removeValue(value) {
+        if (this.isEmpty) {
+            return null
+        }
+        if (this.head.value === value) {
+            this.head = this.head.next
+            this.size--
+            return value
+        } else {
+            let prev = this.head
+            while (prev.next && prev.next.value !== value) {
+                prev = prev.next
+            }
+            if (prev.next) {
+                const removedNode = prev.next
+                prev.next = removedNode.next
+                this.size--
+                return value
+            }
+        }
+    }
+
+    search(value) {
+        if (this.isEmpty()) {
+            return -1
+        }
+        let i = 0
+        let curr = this.head
+        while (curr) {
+            if (curr.value == value) {
+                return i
+            }
+            curr = curr.next
+            i++
+        }
+        return -1
+    }
+
+    reverse() {
+        let prev = null
+        let curr = this.head
+        while (curr) {
+            let next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+        }
+        this.head = prev
+    }
+
+    print() {
+        if (this.isEmpty()) {
+            console.log('List is Empty')
+        } else {
+            let curr = this.head
+            let listValues = ''
+            while (curr) {
+                listValues += `${curr.value} `
+                curr = curr.next
+            }
+            console.log(listValues)
+        }
+    }
+}
 
 
-// insert element between 2  elements in singly linked list
+const list = new linkedList()
+console.log('list is empty', list.isEmpty())
+console.log('list size', list.getSize())
+list.print()
 
-// class Node {
-//     constructor(data) {
-//         this.data = data;
-//         this.next = null;
-//     }
-// }
+// list.prepend(10)
+// list.append(10)
+// list.print()
 
-// class SlinkedList {
-//     constructor() {
-//         this.head = null;
-//         this.tail = null;
-//     }
+// list.prepend(20)
+// list.prepend(30)
+// list.append(20)
+// list.append(30)
+// list.print()
+list.insert(10, 0)
+list.print()
+list.insert(20, 0)
+list.print()
+list.insert(30, 1)
+list.print()
+list.insert(40, 2)
+list.print()
 
-//     addNode(data) {
-//         let newNode = new Node(data);
+// console.log(list.getSize())
 
-//         if (this.head === null) {
-//             this.head = newNode;
-//         } else {
-//             this.tail.next = newNode;
-//         }
-//         this.tail = newNode;
-//         console.log("New node added")
-//     }
+// console.log(list.removeFrom(10))
 
-//     display() {
-//         if (this.head === null) {
-//             console.log("empty");
-//             return;
-//         }
+// console.log(list.removeFrom(0))
+// list.print()
+// console.log(list.removeFrom(1))
+// list.print()
+// console.log(list.getSize())
+// console.log(list.removeValue(40))
+// list.print()
+// console.log(list.removeValue(20))
+// list.print()
 
-//         let temp = this.head;
-//         while (temp !== null) {
-//             console.log(temp.data);
-//             temp = temp.next;
-//         }
-//     }
-
-//     insertAfter(nextTo, data) {
-//         let newNode = new Node(data);
-//         let temp = this.head;
-
-//         while (temp != null && temp.data != nextTo) {
-//             temp = temp.next
-//         }
-
-//         if (temp === null) {
-//             console.log("Element not found");
-//             return;
-//         }
-//         if (temp == this.tail) {
-//             this.tail.next = newNode;
-//             this.tail = newNode;
-//             return
-//         }
-//         newNode.next = temp.next;
-//         temp.next = newNode
-//     }
-// }
-// // Example usage
-// let list = new SlinkedList();
-// list.display();
-
-// list.addNode(10);
-// list.addNode(20);
-// list.addNode(30);
-// list.addNode(50);
-
-// list.insertAfter(20, 60)
-// list.display();
-
+// console.log(list.search(40))
+list.reverse()
+list.print()

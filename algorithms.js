@@ -1,7 +1,6 @@
 // Math Alogorithms
 
 // fibonacci sequence
-
 // function fibanocci(n) {
 //     const fib = [0, 1]
 //     for (let i = 2; i < n; i++) {
@@ -14,7 +13,6 @@
 // // Big - O = O(n)
 
 // Factorial of a number
-
 // function factorial(n) {
 //     let result = 1
 //     for( let i = 2; i <= n ; i++) {
@@ -29,7 +27,6 @@
 // Big - O = O(n)
 
 //Prime Number
-
 // function isPrime(n) {
 //     if (n < 2) {
 //         return false
@@ -47,7 +44,6 @@
 // Big-O = O(sqrt(n))
 
 // Power of Two
-
 // function isPowerOfTwo(n) {
 //     if (n < 1) {
 //         return false
@@ -66,7 +62,6 @@
 //Big-O = O(log(n))
 
 //Power of Two in Bitwise
-
 // function isPowerOfTwoBitWise(n) {
 //     if (n < 1) {
 //         return false
@@ -79,7 +74,6 @@
 
 
 // Recursion 
-
 //Recursive fibonacci sequence
 
 // function recursiveFibonacci(n) {
@@ -95,7 +89,6 @@
 // O(2^n) - recursive time complexity
 
 //Recursive factorial of a  number
-
 // function recursiveFactorail(n) {
 //     if(n==0){
 //         return 1
@@ -109,7 +102,6 @@
 
 
 // Linear search
-
 // function linearSearch(arr,target) {
 //     for(let i = 0; i < arr.length; i++) {
 //         if(arr[i] == target) {
