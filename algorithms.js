@@ -8,9 +8,8 @@
 //     }
 //     return fib
 // }
-// console.log(fibanocci(2))
 // console.log(fibanocci(4))
-// // Big - O = O(n)
+// Big-O = O(n)
 
 // Factorial of a number
 // function factorial(n) {
@@ -88,7 +87,7 @@
 // O(n) - Iterative
 // O(2^n) - recursive time complexity
 
-//Recursive factorial of a  number
+//Recursive factorial of a number
 // function recursiveFactorail(n) {
 //     if(n==0){
 //         return 1
@@ -113,7 +112,7 @@
 // console.log(linearSearch([-5,2,10,4,16],10))
 // console.log(linearSearch([-5,2,10,4,16],16))
 // console.log(linearSearch([-5,2,10,4,16],2))
-// // O(n)
+// O(n)
 
 //Binary search 
 

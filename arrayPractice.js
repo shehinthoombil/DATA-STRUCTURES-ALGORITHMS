@@ -1,5 +1,4 @@
-// print all the repeating avlues in the array
-
+// print all the repeating elements in the array
 // const arr = [3,4,2,3,1,1,8,1]
 // const result = []
 

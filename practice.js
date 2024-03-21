@@ -100,3 +100,4 @@
 
 
 // count of the double element
+let a = 'aakuuaaakkuuaakuaa'

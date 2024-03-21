@@ -25,10 +25,13 @@
 
 // function result(array, target) {
 //     let nums = new Set();
+//     console.log(nums)
 
 //     for (let i = 0; i < array.length; i++) {
 //         let num = array[i];
+//         // console.log(array[i])
 //         let match = target - num;
+//         console.log(match)
 //         if (nums.has(match)) {
 //             return [num, match];
 //         } else {
@@ -44,7 +47,6 @@
 
 // the all elements 6 move to end part of the array
 
-// let array = [6, 1, 6, 8, 10, 4, 15, 6, 3, 9, 6];
 // let target = 6
 // let i = 0;
 // let j = array.length - 1;
