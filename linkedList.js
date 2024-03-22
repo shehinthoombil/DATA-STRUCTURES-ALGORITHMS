@@ -22,7 +22,7 @@ class linkedList {
     }
 
     // adding values to start, head will move with next node that means head will be the last added node -
-    // that why the last added value is the first and tail will stay menas tail will be the first added node: head -> value 3 -> value 2 -> value 1 
+    // that why the last added value is the first and tail will stay means tail will be the first added node: head -> value 3 -> value 2 -> value 1 
     //O(1) - time complexity
     prepend(value) {
         const node = new Node(value)
@@ -70,7 +70,7 @@ class linkedList {
         }
     }
 
-    // remove a value
+    // remove a value at a selected index
     removeFrom(index) {
         if (index < 0 || index > this.size) {
             return
@@ -93,6 +93,7 @@ class linkedList {
         return removeNode.value
     }
 
+    //removing a given value
     removeValue(value) {
         if (this.isEmpty) {
             return null
@@ -115,6 +116,7 @@ class linkedList {
         }
     }
 
+    //searching
     search(value) {
         if (this.isEmpty()) {
             return -1
@@ -131,6 +133,7 @@ class linkedList {
         return -1
     }
 
+        //reverse
     reverse() {
         let prev = null
         let curr = this.head
@@ -156,8 +159,51 @@ class linkedList {
             console.log(listValues)
         }
     }
-}
 
+     // reversing using recursion
+     reverseRecursively() {
+        const reverseHelper = (current, prev) => {
+            if (!current) {
+                this.head = prev;
+                return;
+            }
+            const nextNode = current.next;
+            current.next = prev;
+            reverseHelper(nextNode, current);
+        };
+  
+        reverseHelper(this.head, null);
+    }
+
+
+    // calculating the all value sum
+    sum(){
+        if(this.isEmpty()){
+            return null
+        }
+        let pos = this.head
+        let sum = 0
+        while(pos){
+            sum += pos.value
+            pos = pos.next
+        }
+        return sum
+    }
+
+
+    // finding the middle element 
+    getMidd() {
+        let slow = this.head;
+        let fast = this.head;
+    
+        while (fast.next && fast.next.next) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow.value;
+    }
+
+}
 
 const list = new linkedList()
 console.log('list is empty', list.isEmpty())

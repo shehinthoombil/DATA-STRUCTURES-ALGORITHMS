@@ -18,7 +18,7 @@
 // let a = str.split(' ').reverse().join()
 // console.log(a)
 
- 
+
 // reverse using recursion
 
 // const str = 'Hello my world'
@@ -99,5 +99,20 @@
 
 
 
-// count of the double element
-let a = 'aakuuaaakkuuaakuaa'
+// count of the double element 'a'
+// let str = 'aakuuaaakkuuaakuaa'
+
+// let count = 0;
+// let result = 0;
+
+// for (let i = 0; i <= str.length; i++) {
+//     if (str[i] === 'a') {
+//         count++
+//     } else if (count == 2) {
+//         result++
+//         count = 0
+//     } else {
+//         count = 0
+//     }
+// }
+// console.log(result)

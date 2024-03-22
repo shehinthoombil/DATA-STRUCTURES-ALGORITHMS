@@ -1,4 +1,4 @@
-// Math Alogorithms
+//-----Math Alogorithms----
 
 // fibonacci sequence
 // function fibanocci(n) {

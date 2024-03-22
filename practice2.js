@@ -110,6 +110,7 @@
 // let arrSum = arr.reduce((sum, num) => sum + num, 0);
 // let missingNumber = totalSum - arrSum
 // console.log(missingNumber)
+
 // using loop
 // let arr = [1, 2, 3, 4, 5, 7]
 // let missingNumber = null
