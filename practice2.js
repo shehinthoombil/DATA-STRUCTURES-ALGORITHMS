@@ -122,6 +122,37 @@
 // }
 // console.log(missingNumber)
 
+// to find the secret character from array
+// function change(str, key) {
+//     let newKey = key % 26;
+//     console.log(newKey);
+//     let result = '';
+
+//     for (let i = 0; i < str.length; i++) {
+//         let charCode = str.charCodeAt(i);
+//         console.log(charCode)
+
+//         // Assuming the encryption is only intended for lowercase letters
+//         if (charCode >= 97 && charCode <= 122) {
+//             let newCharCode = charCode + newKey;
+//             if (newCharCode > 122) {
+//                 newCharCode = 96 + (newCharCode % 122);
+//             }
+//             result += String.fromCharCode(newCharCode);
+//             console.log(result)
+//         } else {
+//             // Directly add character to result if it's not a lowercase letter
+//             result += str[i];
+//         }
+//     }
+
+//     return result;
+// }
+
+// let value = "hai";
+// console.log(change(value, 2));
+
+
 
 
 
