@@ -53,6 +53,7 @@
 //     return arr
 // }
 // console.log(selectionSort(arr))
+// O(n^2)  
 
 // Quick sort
 
@@ -74,6 +75,8 @@
 //     return [...quickSort(leftArray), pivot, ...quickSort(rightArray)]
 // }
 // console.log(quickSort(arr))
+// worst case O(n^2) if it is a sorted array
+// avg case O(n log n)
 
 //  Merge Sort
 
@@ -98,9 +101,10 @@ function merge(leftArray, rightArray) {
     }
     return [...sortArray,...leftArray,...rightArray]
 }
-
-let arr = [8, 20, -2, 4, -6]
+let arr = [8, 20, -2, 4, -6];
 console.log(mergeSort(arr))
+// O(n log n)  best time complexity sorting
+
 
 
 
