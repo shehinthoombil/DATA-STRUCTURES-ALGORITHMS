@@ -38,16 +38,16 @@
 
 // function selectionSort(arr) {
 //     for (let i = 0; i < arr.length - 1; i++) {
-//         let min = i
+//         let minIndex = i
 //         for (let j = i + 1; j < arr.length; j++) {
-//             if (arr[j] < arr[min]) {
-//                 min = j
+//             if (arr[j] < arr[minIndex]) {
+//                 minIndex = j
 //             }
 //         }
-//         if (min != i) {
+//         if (minIndex != i) {
 //             let temp = arr[i]
-//             arr[i] = arr[min]
-//             arr[min] = temp
+//             arr[i] = arr[minIndex]
+//             arr[minIndex] = temp
 //         }
 //     }
 //     return arr
@@ -79,7 +79,6 @@
 // avg case O(n log n)
 
 //  Merge Sort
-
 function mergeSort(arr) {
     if (arr.length < 2) {
         return arr
@@ -89,7 +88,6 @@ function mergeSort(arr) {
     const rightArray = arr.slice(mid)
     return merge(mergeSort(leftArray), mergeSort(rightArray))
 }
-
 function merge(leftArray, rightArray) {
     const sortArray = []
     while (leftArray.length && rightArray.length) {
