@@ -142,8 +142,14 @@
 // console.log(queue.peek())
 
 
-
-
-
-
+// recursion brototype
+f(n)
+{
+    if(n<1)
+    return 1
+    f(n-1)
+    print(n)
+    f(n)
+    f(n-1)
+}
 
