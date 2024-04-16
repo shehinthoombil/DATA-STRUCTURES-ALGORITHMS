@@ -7,14 +7,15 @@ class Node {
 }
 
 class BinarySearchTree {
-    contsructor() {
+    constructor() {
         this.root = null
     }
     isEmpty() {
-        return this.root = null
+        return this.root == null
 
     }
 
+    // insertion
     insert(value) {
         const newNode = new Node(value)
         if (this.isEmpty()) {
@@ -26,16 +27,32 @@ class BinarySearchTree {
 
     insertNode(root, newNode) {
         if (newNode.value < root.value) {
-            if (root.left = null) {
+            if (root.left == null) {
                 root.left = newNode
             } else {
                 this.insertNode(root, left, newNode)
             }
         } else {
-            if (root.right = null) {
+            if (root.right == null) {
                 root.right = newNode
             } else {
                 this.insertNode(root, right, newNode)
+            }
+        }
+    }
+
+ //search
+
+    search(root, value) {
+        if (!root) {
+            return false
+        } else {
+            if (root.value === value) {
+                return true
+            } else if (value < root.value) {
+                return this.search(root.left, value)
+            } else {
+                return this.search(root.right, value)
             }
         }
     }
@@ -48,3 +65,6 @@ console.log('Tree is empty?', bst.isEmpty())
 bst.insert(10)
 bst.insert(5)
 bst.insert(15)
+
+console.log(bst.search(bst.root, 10))
+
