@@ -119,10 +119,6 @@ max(root){
     }
 }
 }
-
-
-
-
 const bst = new BinarySearchTree()
 console.log('Tree is empty?', bst.isEmpty())
 
@@ -135,7 +131,6 @@ bst.insert(7)
 // bst.preOrder(bst.root)
 // bst.inOrder(bst.root)
 // bst.postOrder(bst.root)
-
 // bst.breadthTraversal()
 // console.log(bst.min(bst.root))
 // console.log(bst.max(bst.root))
