@@ -109,5 +109,3 @@ graph.addEdge('A','D',);
 // graph.removeVertex('A')
 // graph.display()
 // console.log(graph.hasEdge("C","B"));
-console.log(graph.BFS('A'));
-console.log(graph.DFS('A
