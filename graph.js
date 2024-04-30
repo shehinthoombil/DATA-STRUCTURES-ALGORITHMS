@@ -101,8 +101,8 @@ graph.addEdge("B","C");
 graph.addEdge('C','B')
 graph.addEdge('A','D',);
 
-// graph.display()
-// console.log(graph.hasEdge("C","B"));
+graph.display()
+console.log(graph.hasEdge("C","B"));
 // // graph.deleteEdge("C","B")
 // // graph.display()
 // // console.log(graph.hasEdge("C","B"));
