@@ -204,9 +204,4 @@ list.insert(15, 1)
 list.insert(25, 4)
 list.print()
 console.log(list.search(10));
-console.log(list.search(5));
-
-
-
-
-
+console.log(list.search(5))
