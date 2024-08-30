@@ -15,7 +15,7 @@
 //     return arr
 // }
 // console.log(bubbleSort(arr))
-//complexity - O(n^2)
+// complexity - O(n^2)
 
 // Insertion sort
 // let arr = [8, 20, -2, 4, -6]
@@ -59,7 +59,7 @@
 
 // let arr = [8, 20, -2, 4, -6]
 // function quickSort(arr) {
-//     if (arr.length < 2) {
+//     if (arr.length <= 2) {
 //         return arr
 //     }
 //     let pivot = arr[arr.length - 1]
@@ -97,7 +97,7 @@ function merge(leftArray, rightArray) {
             sortArray.push(rightArray.shift())
         }
     }
-    return [...sortArray,...leftArray,...rightArray]
+    return [...sortArray, ...leftArray, ...rightArray]
 }
 let arr = [8, 20, -2, 4, -6];
 console.log(mergeSort(arr))
