@@ -285,26 +285,206 @@
 // console.log(quickSort(arr))
 
 //merge
-let arr = [8, 20, -2, 4, -6];
-function mergeSort(arr) {
-    if (arr.length < 2) {
-        return arr
+// let arr = [8, 20, -2, 4, -6];
+// function mergeSort(arr) {
+//     if (arr.length < 2) {
+//         return arr
+//     }
+//     let mid = Math.floor(arr.length / 2)
+//     let left = arr.slice(0, mid)
+//     let right = arr.slice(mid)
+//     return merge(mergeSort(left), mergeSort(right))
+// }
+// function merge(left, right) {
+//     let sortArray = []
+//     while (left.length && right.length) {
+//         if (left[0] <= right[0]) {
+//             sortArray.push(left.shift())
+//         } else {
+//             sortArray.push(right.shift())
+//         }
+//     }
+//     return [...sortArray, ...left, ...right]
+// }
+// console.log(mergeSort(arr));
+
+//hash table 
+
+// class HashTable {
+//     constructor(size) {
+//         this.table = new Array(size)
+//         this.size = size
+
+//     }
+//     hash(key) {
+//         let total = 0
+//         for (let i = 0; i < key.length; i++) {
+//             total = total + key.charCodeAt(i)
+//         }
+//         return total % this.size
+//     }
+//     set(key, value) {
+//         let index = this.hash(key)
+//         this.table[index] = value
+//     }
+//     get(key) {
+//         let index = this.hash(key)
+//         return this.table[index]
+//     }
+//     remove(key) {
+//         let index = this.hash(key)
+//         this.table[index] = undefined
+//     }
+//     display() {
+//         for (let i = 0; i < this.table.length; i++) {
+//            if(this.table[i]){
+//             console.log(i,this.table[i]);
+
+//            }
+
+//         }
+//     }
+
+// }
+// const table = new HashTable(50)
+// table.set("name","shehin")
+// table.set("age",22)
+// table.display()
+// console.log(table.get("name"));
+// table.remove("age")
+// table.display()
+
+
+// console.log("1st");
+// setTimeout(()=>{
+//     console.log("2nd");
+
+// },3000)
+// console.log("3rd");
+
+//BST
+class Node {
+    constructor(value) {
+        this.value = value
+        this.left = null
+        this.right = null
     }
-    let mid = Math.floor(arr.length / 2)
-    let left = arr.slice(0, mid)
-    let right = arr.slice(mid)
-    return merge(mergeSort(left), mergeSort(right))
 }
-function merge(left, right) {
-    let sortArray = []
-    while (left.length && right.length) {
-        if (left[0] <= right[0]) {
-            sortArray.push(left.shift())
+class BinarySearchTree {
+    constructor() {
+        this.root = null
+    }
+    isEmpty() {
+        this.root == null
+    }
+    insert(value) {
+        const node = new Node(value)
+        if (this.root === null) {
+            this.root = node
         } else {
-            sortArray.push(right.shift())
+            this.insertNode(this.root, node)
         }
     }
-    return [...sortArray, ...left, ...right]
+    insertNode(root, node) {
+        if (root.value > node.value) {
+            if (root.left == null) {
+                root.left = node
+            } else {
+                this.insertNode(root.left, node)
+            }
+        } else {
+            if (root.right == null) {
+                root.right = node
+            } else {
+                this.insertNode(root.right, node)
+            }
+        }
+    }
+
+    search(root, value) {
+        if (!root) {
+            return false
+        }
+        if (root.value == value) {
+            return true
+        } else if (root.value > value) {
+            return this.search(root.left, value)
+        } else {
+            return this.search(root.right, value)
+        }
+    }
+
+    preOrder(root) {
+        if (root) {
+            console.log(root.value);
+            this.preOrder(root.left)
+            this.preOrder(root.right)
+        }
+    }
+
+    inOrder(root) {
+        if (root) {
+            this.inOrder(root.left)
+            console.log(root.value);
+            this.inOrder(root.right)
+        }
+    }
+    postOrder(root) {
+        if (root) {
+            this.postOrder(root.left)
+            this.postOrder(root.right)
+            console.log(root.value)
+        }
+    }
+
+    //BFS
+    bfs() {
+        let queue = []
+        queue.push(this.root)
+        if (queue.length) {
+            let curr = queue.shift()
+            console.log(curr.value);
+            if (curr.left) {
+                queue.push(curr.left)
+            } else {
+                queue.push(curr.right)
+            }
+        }
+    }
+
+//min 
+min(root){
+    if(!root.left){
+        return root.value
+    }else{
+        return this.min(root.left)
+    }
 }
-console.log(mergeSort(arr));
+
+//max 
+max(root){
+    if(!root.right){
+        return root.value
+    }else{
+        return this.max(root.right)
+    }
+}
+
+}
+
+const bst = new BinarySearchTree()
+// console.log('tree empty', bst.isEmpty());
+bst.insert(10)
+bst.insert(20)
+bst.insert(30)
+bst.insert(40)
+// console.log(bst.search(bst.root,10));
+// bst.preOrder(bst.root)
+// bst.inOrder(bst.root)
+// bst.postOrder(bst.root)
+// bst.bfs()
+console.log(bst.min(bst.root));
+console.log(bst.max(bst.root));
+
+
 

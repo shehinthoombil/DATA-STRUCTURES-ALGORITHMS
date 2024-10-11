@@ -1,6 +1,5 @@
 function heapSort(arr) {
     const n = arr.length
-
     for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
         heapify(arr, n, i);
     }
@@ -34,4 +33,4 @@ function heapify(arr, n, i) {
 
 const myArray = [12, 11, 13, 5, 6, 7];
 heapSort(myArray);
-console.log("heapSort",myArray);
+console.log("heapSort", myArray);

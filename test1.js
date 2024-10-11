@@ -1,12 +1,34 @@
-// [{a:100,b:1},{a:50,b:2},{a:25,b:4},{a:12.5,b:8},{a:6.125,b:16}]// [{a:100,b:1},{a:50,b:2},{a:25,b:4},{a:12.5,b:8},{a:6.125,b:16}]
+// reverse the array [123, 456]
+// output should be [654, 321]
 
-function fun(){
-    const arr =[]
-    let i =1
-    while(i<=16){
-        arr.push({a:100/i,b:i})
-        i*=2
-    }
-    return arr
-}
-console.log(fun())
+
+// const arr = [
+//     [
+//         [0, 1, 0],
+//         [1, 0, 1],
+//         [0, 1, 0]
+//     ],
+//     [
+//         [1, 0, 1],
+//         [0, 1, 0],
+//         [1, 0, 1]
+//     ],
+//     [
+//         [0, 1, 0],
+//         [1, 0, 1],
+//         [0, 1, 0]
+//     ], 0, 1, 0
+// ]
+
+
+// let count = 0
+// for(let i = 0; i< arr.length;i++){
+//    for(let j = 0; j<arr[i].length; j++){
+//     if(arr[j].includes(0)){
+//         count++
+//     }else if(arr[i].includes(0)){
+//         count++
+//     }
+//    } 
+//    return count
+// }
