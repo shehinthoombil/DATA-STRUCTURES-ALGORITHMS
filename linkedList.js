@@ -71,12 +71,11 @@ class linkedList {
     }
 
     // remove a value at a selected index
-    removeFrom(index) {
+    removeFrom(index,value) {
         if (index < 0 || index > this.size) {
             return
-
         }
-        let removeNode
+        let removeNode 
         if (index == 0) {
             removeNode = this.head
             this.head = this.head.next
@@ -133,7 +132,7 @@ class linkedList {
         return -1
     }
 
-        //reverse
+    //reverse
     reverse() {
         let prev = null
         let curr = this.head
@@ -160,8 +159,21 @@ class linkedList {
         }
     }
 
-     // reversing using recursion
-     reverseRecursively() {
+    print() {
+        if (this.isEmpty()) {
+            console.log('List is Empty')
+        } else {
+            let curr = this.head
+            while (curr) {
+                console.log(curr.value)
+                curr = curr.next
+            }
+        }
+    }
+
+
+    // reversing using recursion
+    reverseRecursively() {
         const reverseHelper = (current, prev) => {
             if (!current) {
                 this.head = prev;
@@ -171,19 +183,19 @@ class linkedList {
             current.next = prev;
             reverseHelper(nextNode, current);
         };
-  
+
         reverseHelper(this.head, null);
     }
 
 
     // calculating the all value sum
-    sum(){
-        if(this.isEmpty()){
+    sum() {
+        if (this.isEmpty()) {
             return null
         }
         let pos = this.head
         let sum = 0
-        while(pos){
+        while (pos) {
             sum += pos.value
             pos = pos.next
         }
@@ -195,15 +207,15 @@ class linkedList {
     getMidd() {
         let slow = this.head;
         let fast = this.head;
-    
+
         while (fast.next && fast.next.next) {
             slow = slow.next;
             fast = fast.next.next;
         }
         return slow.value;
     }
-
 }
+
 
 const list = new linkedList()
 console.log('list is empty', list.isEmpty())
@@ -243,5 +255,4 @@ list.print()
 // list.print()
 
 // console.log(list.search(40))
-list.reverse()
-list.print()
+// list.reverse()

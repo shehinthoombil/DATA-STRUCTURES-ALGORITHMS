@@ -12,27 +12,27 @@
 // console.log(linearSearch(arr, target))
 
 //Binary Search
-// function BinarySearch(arr, target) {
-//     let leftIndex = 0
-//     let rightIndex = arr.length - 1
-//     if (arr.length === 0) {
-//         return -1
-//     }
-//     while (leftIndex <= rightIndex) {
-//         let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+function BinarySearch(arr, target) {
+    let leftIndex = 0
+    let rightIndex = arr.length - 1
+    if (arr.length === 0) {
+        return -1
+    }
+    while (leftIndex <= rightIndex) {
+        let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
 
-//         if (target === arr[middleIndex]) {
-//             return middleIndex
-//         }
-//         if (target < arr[middleIndex]) {
-//             rightIndex = arr[middleIndex] - 1
-//         }
-//         if (target > arr[middleIndex]) {
-//             leftIndex = arr[middleIndex] + 1
-//         }
-//     }
-// }
-// console.log(BinarySearch([1, 2, 3, 4, 5, 6], 5))
+        if (target === arr[middleIndex]) {
+            return middleIndex
+        }
+        if (target < arr[middleIndex]) {
+            rightIndex = arr[middleIndex] - 1
+        }
+        if (target > arr[middleIndex]) {
+            leftIndex = arr[middleIndex] + 1
+        }
+    }
+}
+console.log(BinarySearch([1, 2, 3, 4, 5, 6], 5))
 //Time complexity-O(log(n))
 
 //Binary Search using recursion
